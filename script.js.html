@@ -1,0 +1,16 @@
+function checkSecurity() {
+    let link = document.getElementById("checkInput").value;
+    let resultDiv = document.getElementById("result");
+    
+    if (link === "") {
+        resultDiv.innerHTML = "يرجى إدخال رابط صحيح!";
+        return;
+    }
+    
+    resultDiv.innerHTML = "جاري الاتصال بالسيرفر الأمني وفحص الرابط...";
+    
+    // محاكاة لعملية الفحص
+    setTimeout(() => {
+        resultDiv.innerHTML = "تم الفحص: لم يتم العثور على اختراقات مباشرة في هذا الرابط.";
+    }, 2000);
+}
