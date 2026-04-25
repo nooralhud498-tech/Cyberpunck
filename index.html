@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>نظام الفحص الأمني</title>
+    <style>
+        /* دمجنا التنسيق هنا داخل HTML */
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: 5px solid #004400;
+        }
+
+        .radar-box {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border: 2px solid #00ff00;
+            border-radius: 50%;
+            background: radial-gradient(circle, #001100 0%, #000 80%);
+            box-shadow: 0 0 20px #00ff00;
+            overflow: hidden;
+        }
+
+        /* خط الرادار المتحرك */
+        .radar-scan {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50%;
+            height: 2px;
+            background: #00ff00;
+            transform-origin: left center;
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        .content {
+            position: absolute;
+            z-index: 10;
+            text-align: center;
+        }
+
+        input {
+            background: #000;
+            border: 1px solid #00ff00;
+            color: #00ff00;
+            padding: 10px;
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="radar-box">
+        <div class="radar-scan"></div>
+    </div>
+
+    <div class="content">
+        <h1>فحص أمني</h1>
+        <input type="text" placeholder="ضع الرابط هنا...">
+        <br><br>
+        <button onclick="alert('جاري التحقق...')">فحص الحساب</button>
+    </div>
+
+</body>
+</html>
